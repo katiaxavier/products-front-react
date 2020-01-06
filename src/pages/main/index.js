@@ -24,11 +24,11 @@ export default class Main extends Component {
             <div className="products-list">
                 {products.map(product => (
                     <article key={product._id}>
-                        <div className="polaroid">
+                        <div className="card-polaroid">
                             <div className="card"> <img src={product.img} /></div>
-                            <p>{product.title}</p>
-                            <p>De: <span className="price">{product.price}</span></p>
-                            <p>Por: <span>{product.sPrice}</span></p>
+                            <p id="productTitle"><strong>{product.title}</strong></p>
+                            <p id="idprice">De: <span className="price">R$ {product.price}</span></p>
+                            <p> <strong>Por: {product.sPrice}</strong></p>
                         </div>
                     </article>
 
