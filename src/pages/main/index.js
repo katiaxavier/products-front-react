@@ -5,7 +5,7 @@ import './styles.css'
 
 export default class Main extends Component {
     state = {
-        products: []
+        products: [],
     }
 
     componentDidMount() {
@@ -21,14 +21,20 @@ export default class Main extends Component {
     render() {
         const { products } = this.state
         return (
+
             <div className="products-list">
+                <div id="divBusca">
+                    <input type="text" id="busca" placeholder="Buscar..." />
+                    <button id="btnBusca">Buscar</button>
+                </div>
+
                 {products.map(product => (
                     <article key={product._id}>
                         <div className="card-polaroid">
-                            <div className="card"> <img src={product.img} /></div>
+                            <div className="card"> <img src={product.img} alt="product" /></div>
                             <p id="productTitle"><strong>{product.title}</strong></p>
                             <p id="idprice">De: <span className="price">R$ {product.price}</span></p>
-                            <p> <strong>Por: {product.sPrice}</strong></p>
+                            <p> <strong>Por: R$ {product.sPrice}</strong></p>
                         </div>
                     </article>
 
