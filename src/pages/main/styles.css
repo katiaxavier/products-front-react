@@ -15,30 +15,59 @@ div.card-polaroid {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
-    padding: 10px;   
+    padding: 10px;
 }
 
-.card{
+.card {
     width: 310px;
     height: 160.5px;
-    display: flex;    
+    display: flex;
 }
 
-p{
+p {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
- span.price{
+span.price {
     text-decoration: line-through;
     color: gray;
 }
 
-#idprice{
+#idprice {
     color: gray;
 }
 
 .products-list article div:hover {
     background: gainsboro;
     cursor: pointer;
+}
+
+#divBusca {
+    width: 100%;
+    background-color: #E0EEEE;
+    border: solid 2px #5F9EA0;
+    border-radius: 10px;
+    height: 32px;
+    margin: 10px;
+}
+
+#busca {  
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 191px;
+}
+
+#btnBusca {
+    border: none;
+    float: left;
+    height: 32px;
+    border-radius: 0 7px 7px 0;
+    width: 70px;
+    font-weight: bold;
+    background: #5F9EA0;
 }
