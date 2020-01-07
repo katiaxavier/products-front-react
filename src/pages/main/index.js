@@ -6,6 +6,7 @@ import './styles.css'
 export default class Main extends Component {
     state = {
         products: [],
+        busca: ''
     }
 
     componentDidMount() {
@@ -18,13 +19,17 @@ export default class Main extends Component {
         this.setState({ products: response.data });
     }
 
+    click(params) {
+        console.log(params)
+    }
+
     render() {
         const { products } = this.state
         return (
 
             <div className="products-list">
                 <div id="divBusca">
-                    <input type="text" id="busca" placeholder="Buscar..." />
+                    <input type="text" id="busca" placeholder="Buscar..." onChange={e => this.click(e.target.value)} />
                     <button id="btnBusca">Buscar</button>
                 </div>
 
