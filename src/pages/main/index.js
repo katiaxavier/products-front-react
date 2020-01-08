@@ -4,23 +4,30 @@ import api from "../../services/api"
 import './styles.css'
 
 export default class Main extends Component {
-    state = {
-        products: [],
-        busca: ''
-    }
 
-    componentDidMount() {
-        this.loadProducts();
+    constructor(props) {
+        super(props);
+        this.state = { products: [], search: '' };
+
+        this.handleChange = this.handleChange.bind(this);
+
     }
 
     loadProducts = async () => {
-        const response = await api.get('search?terms=teste');
+        try {
+            const response = await api.get(`search?terms=${this.state.search}`);
 
-        this.setState({ products: response.data });
+            if (response.status === 200) {
+                return this.setState({ products: response.data });
+            }
+        }
+        catch (e) {
+            return e
+        }
     }
 
-    click(params) {
-        console.log(params)
+    handleChange(event) {
+        this.setState({ search: event.target.value });
     }
 
     render() {
@@ -29,8 +36,8 @@ export default class Main extends Component {
 
             <div className="products-list">
                 <div id="divBusca">
-                    <input type="text" id="busca" placeholder="Buscar..." onChange={e => this.click(e.target.value)} />
-                    <button id="btnBusca">Buscar</button>
+                    <input type="text" id="busca" placeholder="Buscar..." onChange={this.handleChange} />
+                    <button id="btnBusca" onClick={this.loadProducts}>Buscar</button>
                 </div>
 
                 {products.map(product => (
