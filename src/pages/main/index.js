@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from "../../services/api"
+import {FaSearch} from 'react-icons/fa'
 
 import './styles.css'
 
@@ -35,10 +36,15 @@ export default class Main extends Component {
         return (
 
             <div className="products-list">
+                <div className="header">
                 <div id="divBusca">
                     <input type="text" id="busca" placeholder="Buscar..." onChange={this.handleChange} />
-                    <button id="btnBusca" onClick={this.loadProducts}>Buscar</button>
+                    <button id="btnBusca" onClick={this.loadProducts}> <FaSearch/></button>
                 </div>
+                </div>
+
+                <p id="nProdutos"> {this.state.products.length} PRODUTOS ENCONTRADOS </p>
+
 
                 {products.map(product => (
                     <article key={product._id}>
