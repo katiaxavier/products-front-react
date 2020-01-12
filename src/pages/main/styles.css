@@ -43,12 +43,15 @@ span.price {
     cursor: pointer;
 }
 
-#divBusca {
+.divBusca {
     width: 30%;
     background-color: #E0EEEE;
     border: solid 2px honeydew;
     height: 32px;
     margin: 10px;
+    position: relative;
+    border-radius:0 7px 7px 0;
+    
 }
 
 div.header {
@@ -65,17 +68,23 @@ div.header {
     font-size: 18px;
     border: none;
     height: 32px;
+    width: 100%;
+    border: none;
+    outline: none;
 }
 
 #btnBusca {
-    border: none;
-    /* float: left; */
-    height: 32px;
-    /* border-radius: 0 7px 7px 0; */
-    /* width: 70px; */
-    /* font-weight: bold; */
-    background: blueviolet;
-}
+    border:none;
+    height:32px;
+    border-radius:0 7px 7px 0;
+    width:70px;
+    background:#5F9EA0;
+    position: absolute;   
+    top: 0; 
+    right: 0;
+    cursor: pointer;
+    outline: none;
+}I
 
 p#nProdutos {
     font-size: 18px;
