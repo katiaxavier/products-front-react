@@ -37,7 +37,7 @@ export default class Main extends Component {
 
             <div className="products-list">
                 <div className="header">
-                <div id="divBusca">
+                <div className="divBusca">
                     <input type="text" id="busca" placeholder="Buscar..." onChange={this.handleChange} />
                     <button id="btnBusca" onClick={this.loadProducts}> <FaSearch/></button>
                 </div>
